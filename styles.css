@@ -129,6 +129,41 @@ footer i:hover {
   transform: scale(1.2);
 }
 
+#sobre-mi, #proyectos, #galeria {
+  scroll-margin-top: 100px;
+}
+
+.accordion-item {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #e0d5c3;
+}
+
+.accordion-button {
+  background-color: transparent;
+  color: #3e2f1c;
+  box-shadow: none;
+  font-size: 1.3rem;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: transparent;
+  color: #3e2f1c;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+}
+
+.accordion-body {
+  background-color: transparent;
+  color: #3e2f1c;
+}
+
+.accordion-button::after {
+  filter: invert(80%);
+}
+
 /* MOBILE */
 @media (max-width: 991px) {
   .btn-nav {
@@ -143,5 +178,8 @@ footer i:hover {
   .sticky-carousel {
     top: calc(-1 * (50vh - 70px));
     height: 50vh;
+  }
+   #sobre-mi, #proyectos, #contacto {
+    scroll-margin-top: 70px;
   }
 }
