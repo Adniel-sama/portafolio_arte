@@ -1,3 +1,4 @@
+/* ==================== GLOBAL ==================== */
 body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
@@ -9,7 +10,7 @@ h1, h2, h3, h4, h5 {
   font-family: 'Playfair Display', serif;
 }
 
-/* NAVBAR */
+/* ==================== NAVBAR ==================== */
 .navbar {
   background: linear-gradient(
     to bottom,
@@ -21,23 +22,19 @@ h1, h2, h3, h4, h5 {
   z-index: 2000;
   position: fixed;
   width: 100%;
-  padding-top: 15px;
-  padding-bottom: 15px;
-
+  padding: 15px 0;
 }
 
-.navbar-brand{
-    font-family: 'Amatic SC', cursive;
-    font-size: 30px;
-    line-height: 1;
-    color: #fff;
+.navbar-brand {
+  font-family: 'Amatic SC', cursive;
+  font-size: 30px;
+  line-height: 1;
+  color: #fff;
 }
+
 .btn-nav {
   color: #fff;
   text-shadow: 0 2px 5px rgba(0,0,0,0.7);
-}
-
-.btn-nav {
   border: 2px solid #fff;
   border-radius: 5px;
   padding: 6px 14px;
@@ -51,7 +48,7 @@ h1, h2, h3, h4, h5 {
   color: #ffffff;
 }
 
-/* CAROUSEL */
+/* ==================== CAROUSEL ==================== */
 .carousel-item img {
   height: 70vh;
   object-fit: cover;
@@ -73,7 +70,7 @@ h1, h2, h3, h4, h5 {
   height: 70vh;
 }
 
-/* SIDEBAR */
+/* ==================== SIDEBAR ==================== */
 .sidebar {
   background: #fffaf3;
   border-radius: 10px;
@@ -86,7 +83,7 @@ h1, h2, h3, h4, h5 {
   object-fit: cover;
 }
 
-/* GALERÍA */
+/* ==================== GALERÍA ==================== */
 .galeria img {
   border-radius: 10px;
   cursor: pointer;
@@ -98,7 +95,7 @@ h1, h2, h3, h4, h5 {
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
-/* FOOTER */
+/* ==================== FOOTER ==================== */
 footer {
   background: #3e2f1c;
   color: white;
@@ -129,25 +126,27 @@ footer i:hover {
   transform: scale(1.2);
 }
 
-#sobre-mi, #proyectos, #galeria {
+/* ==================== SCROLL MARGIN ==================== */
+#sobre-mi, #proyectos, #galeria, #contacto {
   scroll-margin-top: 100px;
 }
 
+/* ==================== ACORDEÓN ==================== */
 .accordion-item {
-  background-color: transparent;
+  background-color: #f5f1e8;
   border: none;
   border-bottom: 1px solid #e0d5c3;
 }
 
 .accordion-button {
-  background-color: transparent;
+  background-color: #f5f1e8;
   color: #3e2f1c;
   box-shadow: none;
   font-size: 1.3rem;
 }
 
 .accordion-button:not(.collapsed) {
-  background-color: transparent;
+  background-color: #f5f1e8;
   color: #3e2f1c;
 }
 
@@ -156,30 +155,135 @@ footer i:hover {
 }
 
 .accordion-body {
-  background-color: transparent;
+  display: flex;
+  flex-direction: column; /* móviles por defecto */
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.accordion-body img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 4px;
+  max-height: 40vh; /
+}
+
+.accordion-body p {
+  margin: 0;
   color: #3e2f1c;
 }
 
-.accordion-button::after {
-  filter: invert(80%);
+/* GALERÍA */
+.galeria-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-/* MOBILE */
+.galeria-img:hover {
+  transform: scale(1.05);
+}
+
+/* LIGHTBOX */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* controles */
+.lightbox .close,
+.lightbox .prev,
+.lightbox .next {
+  position: absolute;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.lightbox .close {
+  top: 20px;
+  right: 30px;
+}
+
+.lightbox .prev {
+  left: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.lightbox .next {
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* ==================== MEDIA QUERIES ==================== */
 @media (max-width: 991px) {
+  /* Navbar botones móviles */
   .btn-nav {
     display: block;
     margin: 10px 0;
   }
 
+  /* Carousel más pequeño */
   .carousel-item img {
     height: 50vh;
   }
-  
+
   .sticky-carousel {
     top: calc(-1 * (50vh - 70px));
     height: 50vh;
   }
-   #sobre-mi, #proyectos, #contacto {
+
+  #sobre-mi, #proyectos, #contacto {
     scroll-margin-top: 70px;
+  }
+}
+
+@media (min-width: 992px) {
+
+  .accordion-body {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .accordion-body img {
+    width: 50%;
+  }
+
+  .accordion-body p {
+    width: 50%;
+    padding-left: 1rem;
   }
 }
