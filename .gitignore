@@ -1,0 +1,22 @@
+# Ignorar entornos virtuales
+**/venv/
+**/.venv/
+**/env/
+**/.env/
+
+# Ignorar cachés de Python
+**/__pycache__/
+**/*.py[cod]
+.vscode
+
+# Archivos de test
+**/.pytest_cache/
+
+# Archivos creados por herramientas de empaquetado
+*.egg-info/
+*.egg
+dist/
+build/
+
+# Archivos específicos
+markdown-html.py
