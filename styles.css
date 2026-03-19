@@ -1,0 +1,141 @@
+body {
+  margin: 0;
+  font-family: 'Libre Baskerville', serif;
+  background: #f5f1e8;
+  color: #3e2f1c;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+/* NAVBAR */
+.navbar {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0)
+  );
+  z-index: 2000;
+  position: fixed;
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+}
+
+.navbar-brand,
+.btn-nav {
+  color: #fff;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.7);
+}
+
+.btn-nav {
+  border: 2px solid #fff;
+  border-radius: 5px;
+  padding: 6px 14px;
+  margin-left: 10px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-nav:hover {
+  background: #fff;
+  color: #ffffff;
+}
+
+/* CAROUSEL */
+.carousel-item img {
+  height: 70vh;
+  object-fit: cover;
+  filter: brightness(50%);
+}
+
+.logo-carousel {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 30%;
+  filter: invert(1);
+}
+
+.sticky-carousel {
+  position: sticky;
+  top: calc(-1 * (70vh - 70px));
+  z-index: 1000;
+  height: 70vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+  background: #fffaf3;
+  border-radius: 10px;
+  border: 1px solid #e0d5c3;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+}
+
+/* GALERÍA */
+.galeria img {
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.galeria img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* FOOTER */
+footer {
+  background: #3e2f1c;
+  color: white;
+  padding: 20px;
+}
+
+footer a {
+  color: #e09f3e;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+footer a:hover {
+  color: #fff;
+}
+
+.firma {
+  font-family: 'Amatic SC', cursive;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+footer i {
+  transition: transform 0.3s;
+}
+
+footer i:hover {
+  transform: scale(1.2);
+}
+
+/* MOBILE */
+@media (max-width: 991px) {
+  .btn-nav {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .carousel-item img {
+    height: 50vh;
+  }
+  
+  .sticky-carousel {
+    top: calc(-1 * (50vh - 70px));
+    height: 50vh;
+  }
+}
