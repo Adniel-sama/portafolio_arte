@@ -30,12 +30,13 @@ h1, h2, h3, h4, h5 {
   font-size: 30px;
   line-height: 1;
   color: #fff;
+  pointer-events: none;
 }
 
 .btn-nav {
-  color: #fff;
+  color: rgba(255, 255, 255, 0.8);
   text-shadow: 0 2px 5px rgba(0,0,0,0.7);
-  border: 2px solid #fff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 5px;
   padding: 6px 14px;
   margin-left: 10px;
@@ -44,7 +45,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .btn-nav:hover {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.4);
   color: #ffffff;
 }
 
